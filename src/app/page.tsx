@@ -38,8 +38,6 @@ export default function Home() {
         <div className="absolute -top-[40%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-500/40 rounded-full blur-[150px]" />
       </div>
 
-      <Navbar />
-
       {/* Hero Section */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Slider */}
