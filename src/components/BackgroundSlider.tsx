@@ -1,30 +1,19 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  // Row 1
   "/1.png",
   "/2.png",
   "/3.png",
   "/4.png",
-  "/5.png",
-  // Row 2
-  "/1.png",
-  "/2.png",
-  "/3.png",
-  "/4.png",
-  "/5.png",
-  // Row 3
-  "/4.png",
-  "/2.png",
-  "/1.png",
-  "/3.png",
   "/5.png",
 ];
 
 const BackgroundSlider = () => {
+  // Duplicate the images array to create seamless looping
+  const duplicatedImages = [...images, ...images];
+
   return (
     <div className="absolute inset-0 h-screen w-full overflow-hidden">
       {/* Row 1 */}
@@ -40,8 +29,8 @@ const BackgroundSlider = () => {
           ease: "linear",
         }}
       >
-        {images.slice(0, 5).map((image, index) => (
-          <div key={index} className="relative w-[300px] h-[200px] mx-4 ">
+        {duplicatedImages.map((image, index) => (
+          <div key={`row1-${index}`} className="relative w-[300px] h-[200px] mx-4">
             <Image
               src={image}
               alt={`Slider image ${index + 1}`}
@@ -65,8 +54,8 @@ const BackgroundSlider = () => {
           ease: "linear",
         }}
       >
-        {images.slice(5, 10).map((image, index) => (
-          <div key={index} className="relative w-[300px] h-[200px] mx-4">
+        {duplicatedImages.map((image, index) => (
+          <div key={`row2-${index}`} className="relative w-[300px] h-[200px] mx-4">
             <Image
               src={image}
               alt={`Slider image ${index + 6}`}
@@ -90,8 +79,8 @@ const BackgroundSlider = () => {
           ease: "linear",
         }}
       >
-        {images.slice(10, 15).map((image, index) => (
-          <div key={index} className="relative w-[300px] h-[200px] mx-4">
+        {duplicatedImages.map((image, index) => (
+          <div key={`row3-${index}`} className="relative w-[300px] h-[200px] mx-4">
             <Image
               src={image}
               alt={`Slider image ${index + 11}`}
