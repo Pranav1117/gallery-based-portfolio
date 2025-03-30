@@ -1,19 +1,13 @@
 "use client";
 
-import { easeIn, easeInOut, motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import { useRouter } from "next/navigation";
-import BackgroundSlider from "@/components/BackgroundSlider";
 import {
-  Dancing_Script,
   Big_Shoulders_Stencil_Display,
   Bebas_Neue,
 } from "next/font/google";
+import { motion } from "framer-motion";
+import BackgroundSlider from "@/components/BackgroundSlider";
 
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 const bigShouldersStencil = Big_Shoulders_Stencil_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],

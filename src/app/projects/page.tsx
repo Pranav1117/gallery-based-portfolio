@@ -1,4 +1,6 @@
 "use client";
+import { useRef } from "react";
+import Image from "next/image";
 import {
   motion,
   useScroll,
@@ -6,8 +8,6 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import Image from "next/image";
-import { useRef } from "react";
 import gsap from "gsap";
 
 const projects = [
@@ -50,19 +50,17 @@ const projects = [
 
 // Generate random Y offsets (-30 to 30px)
 const yOffsets = projects.map(() => Math.random() * 60 - 30);
-const speed = 0.01;
 
 export default function ScrollGallery() {
   const { scrollYProgress } = useScroll();
-  const containerRef = useRef(null);
-  const divRefs = useRef([]);
-
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const divRefs = useRef<(HTMLDivElement | null)[]>([]);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const smoothMouseX = useSpring(mouseX, { damping: 20, stiffness: 300 });
   const smoothMouseY = useSpring(mouseY, { damping: 20, stiffness: 300 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const mouseXPos = (e.clientX - rect.left) / rect.width - 0.5;
@@ -191,7 +189,11 @@ export default function ScrollGallery() {
               }}
             >
               <motion.div
-                ref={(el) => (divRefs.current[index] = el)}
+                ref={(el) => {
+                  if (el) {
+                    divRefs.current[index] = el;
+                  }
+                }}
                 className="w-full h-full relative"
                 style={{
                   scale: useTransform(
