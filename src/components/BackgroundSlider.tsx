@@ -5,23 +5,23 @@ import Image from "next/image";
 
 const images = [
   // Row 1
-  "/images/slider/1.jpg",
-  "/images/slider/2.jpg",
-  "/images/slider/3.jpg",
-  "/images/slider/4.jpg",
-  "/images/slider/5.jpg",
+  "/1.png",
+  "/2.png",
+  "/3.png",
+  "/4.png",
+  "/5.png",
   // Row 2
-  "/images/slider/1.jpg",
-  "/images/slider/2.jpg",
-  "/images/slider/3.jpg",
-  "/images/slider/4.jpg",
-  "/images/slider/5.jpg",
+  "/1.png",
+  "/2.png",
+  "/3.png",
+  "/4.png",
+  "/5.png",
   // Row 3
-  "/images/slider/1.jpg",
-  "/images/slider/2.jpg",
-  "/images/slider/3.jpg",
-  "/images/slider/4.jpg",
-  "/images/slider/5.jpg",
+  "/4.png",
+  "/2.png",
+  "/1.png",
+  "/3.png",
+  "/5.png",
 ];
 
 const BackgroundSlider = () => {
@@ -41,12 +41,12 @@ const BackgroundSlider = () => {
         }}
       >
         {images.slice(0, 5).map((image, index) => (
-          <div key={index} className="relative w-[300px] h-[200px] mx-4">
+          <div key={index} className="relative w-[300px] h-[200px] mx-4 ">
             <Image
               src={image}
               alt={`Slider image ${index + 1}`}
               fill
-              className="object-cover rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
+              className="grayscale object-cover rounded-lg opacity-[10%] hover:opacity-20 transition-opacity duration-300"
             />
           </div>
         ))}
@@ -71,7 +71,7 @@ const BackgroundSlider = () => {
               src={image}
               alt={`Slider image ${index + 6}`}
               fill
-              className="object-cover rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
+              className="grayscale opacity-[10%] object-cover rounded-lg hover:opacity-20 transition-opacity duration-300"
             />
           </div>
         ))}
@@ -96,7 +96,7 @@ const BackgroundSlider = () => {
               src={image}
               alt={`Slider image ${index + 11}`}
               fill
-              className="object-cover rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
+              className="grayscale opacity-[10%] object-cover rounded-lg hover:opacity-20 transition-opacity duration-300"
             />
           </div>
         ))}
