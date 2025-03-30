@@ -101,12 +101,15 @@ export default function Home() {
               </div>
             </div>
 
-            <button
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 1.2 }}
               className="border border-white py-2 px-4 rounded-full"
               onClick={() => router.push("/projects")}
             >
               See Projects
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </div>

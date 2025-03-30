@@ -29,7 +29,7 @@ const Navbar = () => {
           >
             <Link
               href="/"
-              className={`${bigShouldersStencil.className} text-white text-2xl font-bold tracking-tight`}
+              className={`${bigShouldersStencil.className} text-neutral-600 text-2xl font-bold tracking-tight`}
             >
               WeiDev
             </Link>

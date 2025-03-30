@@ -1,0 +1,7 @@
+add link for project images only navigate if opacity is 1
+add background on project page like on home page keep animating large letters in background
+fixed home page background
+add smooth scroll
+adjust initail size too
+
+check responsiveness
